@@ -2,7 +2,7 @@
   "name": "suporka-vue-alert",
   "version": "1.0.1",
   "description": "a vue plugin about alert",
-  "main": "index.js",
+  "main": "alert.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
