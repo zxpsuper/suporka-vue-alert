@@ -18,18 +18,20 @@ export default {
     }
   },
   watch: {
-    time() {
-      clearTimeout(this.timer);
-      this.timer = setTimeout(() => {
-        this.show = false;
-      }, this.time);
+    show(val) {
+      if (val) {
+        clearTimeout(this.timer);
+        this.timer = setTimeout(() => {
+          this.show = false;
+        }, this.time);
+      }
     }
   },
   mounted() {
     this.timer = setTimeout(() => {
       this.show = false;
     }, this.time);
-  }
+  },
 };
 </script> 
 <style scoped>

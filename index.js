@@ -1,53 +1,53 @@
-import NwdLoadingComponent from './alert'
+import NwdLoadingComponent from "./alert.vue";
 
 let $vm;
 
 export default {
   install(Vue, options) {
     if (!options) {
-      options = {}
+      options = {};
     }
     if (!$vm) {
       const NwdLoadingPlugin = Vue.extend(NwdLoadingComponent);
       $vm = new NwdLoadingPlugin({
-        el: document.createElement('div')
+        el: document.createElement("div")
       });
     }
     $vm.show = false;
     let alert = {
       info(text) {
-        if (typeof text === 'string') {
+        if (typeof text === "string") {
           $vm.text = text;
-        } else if (typeof text === 'object') {
-          if ('text' in text) $vm.text = text.text
-          if ('time' in text) $vm.time = text.time
+        } else if (typeof text === "object") {
+          if ("text" in text) $vm.text = text.text;
+          if ("time" in text) $vm.time = text.time;
         }
         $vm.show = true;
-        $vm.type = 'info';
+        $vm.type = "info";
         document.body.appendChild($vm.$el);
       },
       success(text) {
-        if (typeof text === 'string') {
+        if (typeof text === "string") {
           $vm.text = text;
-        } else if (typeof text === 'object') {
-          if ('text' in text) $vm.text = text.text
-          if ('time' in text) $vm.time = text.time
+        } else if (typeof text === "object") {
+          if ("text" in text) $vm.text = text.text;
+          if ("time" in text) $vm.time = text.time;
         }
         $vm.show = true;
-        $vm.type = 'success';
+        $vm.type = "success";
         document.body.appendChild($vm.$el);
       },
       error(text) {
-        if (typeof text === 'string') {
+        if (typeof text === "string") {
           $vm.text = text;
-        } else if (typeof text === 'object') {
-          if ('text' in text) $vm.text = text.text
-          if ('time' in text) $vm.time = text.time
+        } else if (typeof text === "object") {
+          if ("text" in text) $vm.text = text.text;
+          if ("time" in text) $vm.time = text.time;
         }
         $vm.show = true;
-        $vm.type = 'error';
+        $vm.type = "error";
         document.body.appendChild($vm.$el);
-      },
+      }
     };
     if (!Vue.$alert) {
       Vue.$alert = alert;
@@ -57,6 +57,6 @@ export default {
       created() {
         this.$alert = Vue.$alert;
       }
-    })
+    });
   }
-}
+};
