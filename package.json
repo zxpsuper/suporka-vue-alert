@@ -1,6 +1,6 @@
 {
   "name": "suporka-vue-alert",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a vue plugin about alert",
   "main": "alert.js",
   "scripts": {
